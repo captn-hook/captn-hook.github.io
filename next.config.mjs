@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+const nextConfig = {
+    // GH Pages is serveless
+    output: "export",
+    basePath: "/gh-page",
+    images: {
+      unoptimized: true,
+    },
+  };
+  
+  export default nextConfig;
