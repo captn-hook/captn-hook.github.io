@@ -2,7 +2,7 @@
 const nextConfig = {
     // GH Pages is serveless
     output: "export",
-    basePath: "/gh-page",
+    basePath: "/captn-hook.github.io",
     images: {
       unoptimized: true,
     },
