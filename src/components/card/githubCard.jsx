@@ -48,6 +48,7 @@ export default function GithubCard({ repo }) {
                                 <h3>Updated:</h3>
                                 <h3>{new Date(data.updated_at).toLocaleDateString()}</h3>
                             </div>
+                            <div className={styles.divider}></div>
                             <div className={styles.date}>
                                 <h3>Created:</h3>
                                 <h3>{new Date(data.created_at).toLocaleDateString()}</h3>

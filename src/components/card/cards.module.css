@@ -42,9 +42,15 @@
 .dateContainer {
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+}
+
+.divider {
+    /* span between two dates */
+    border-top: 1px solid black;
+    width: 100%;
 }
 
 .date {
+    padding: .2rem;
     margin-bottom: 0;
 }
