@@ -90,7 +90,7 @@ export default function Home() {
       </p>
       <iframe className={styles.viewer} src="https://view.poppy.com/embed/" title="3D Viewer" />
       <div className={styles.topSpacer} />
-      <iframe className={styles.resume} src="/resume.pdf#toolbar=0#view=Fit" title="Resume" id="Resume" />
+      <iframe className={styles.resume} src="/Resume.pdf#toolbar=0#view=Fit" title="Resume" id="Resume" />
       <p className={styles.description} id="Github">
         Below are some of my favorite Github projects:
       </p>
