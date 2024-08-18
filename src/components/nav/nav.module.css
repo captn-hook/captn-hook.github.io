@@ -8,6 +8,7 @@
     padding: 1rem 2rem;
     background-color: var(--background-end);
     color: var(--textSub);
+    border-bottom: 1px solid var(--textSub);
 }
 
 .nav ul {

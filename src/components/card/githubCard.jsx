@@ -61,7 +61,7 @@ export default function GithubCard({ repo }) {
                 </a>
             );
         } catch (err) {
-            return <div className={styles.card}>Error: {err.message}</div>;
+            return <a className={styles.card}>Failed to load Github repo!</a>;
         }
     }
 }

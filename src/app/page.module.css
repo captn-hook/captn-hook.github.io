@@ -9,8 +9,18 @@
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Tahoma, sans-serif;
     color: var(--textMain);
+    white-space: pre-line;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: Tahoma, sans-serif;
+    color: var(--textSub);
+    white-space: pre-line;
 }
 
 .description {
@@ -18,7 +28,7 @@
     text-align: center;
     font-size: 1.5rem;
     font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+    font-family: Georgia, serif;
     color: var(--textSub);
     white-space: pre-line;
     max-width: 60%;
@@ -28,7 +38,9 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
     border-radius: 4px;
-    border: 1px solid var(--background-end);
+    /* linear gradient from transperant to background-end */
+    background: var(--background-end);
+    border: 1px solid var(--textMain);
 }
 
 .viewer {
@@ -60,7 +72,7 @@
 }
 
 .topSpacer {
-    height: 5vh;
+    height: 8vh;
 }
 
 .cardList {

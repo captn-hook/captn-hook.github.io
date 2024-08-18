@@ -8,11 +8,10 @@
 
 :root {
   /* colors for light mode */
-  --foreground: #A4969B;
   --textMain: #FCF7FF;
-  --textSub: #C4CAD0;
-  --background-start: #4a4e50;
-  --background-end: #352b32;
+  --textSub: #dbe0e6;
+  --background-start: #222324;
+  --background-end: #2f2e36;
 }
 
 * {
