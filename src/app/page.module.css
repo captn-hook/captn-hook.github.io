@@ -9,7 +9,7 @@
     text-align: center;
     font-size: 3rem;
     font-weight: 700;
-    font-family: Tahoma, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     color: var(--textMain);
     white-space: pre-line;
 }
@@ -18,7 +18,7 @@
     text-align: center;
     font-size: 1.5rem;
     font-weight: 500;
-    font-family: Tahoma, sans-serif;
+    font-family: Trebuchet MS, sans-serif;
     color: var(--textSub);
     white-space: pre-line;
 }
@@ -31,7 +31,7 @@
     font-family: Georgia, serif;
     color: var(--textSub);
     white-space: pre-line;
-    max-width: 60%;
+    max-width: 80vw;
     width: max-content;
     margin-left: auto;
     margin-right: auto;
@@ -48,15 +48,15 @@
     margin-left: auto;
     margin-right: auto;
     height: 50vh;
-    width: 50vw;
+    width: var(--main-width);
     border-radius: 4px;
 }
 
 .resume {
     height: 110vh;
     width: 100vw;
-    max-height: 1200px;
-    max-width: 900px;
+    max-height: 110vh;
+    max-width: var(--main-width);
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -82,7 +82,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    max-width: 60vw;
+    max-width: var(--main-width);
     margin-top: 1rem;
     margin-bottom: 1rem;
 }

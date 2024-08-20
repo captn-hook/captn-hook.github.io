@@ -1,4 +1,4 @@
-/*  palette 
+/*  palette dark
   #FCF7FF - white
   #C4CAD0 - light grey
   #878C8F - grey
@@ -6,12 +6,47 @@
   #655560 - dark purple
 */
 
+/* palette light
+  #17191e - dark grey
+  #2b2c2e - light grey
+  #f1eee3 - cream
+  #ce9e94 - light pink
+  #45143a - dark pink
+*/
+
 :root {
   /* colors for light mode */
-  --textMain: #FCF7FF;
-  --textSub: #dbe0e6;
-  --background-start: #222324;
-  --background-end: #2f2e36;
+  --textMain: #17191e;
+  --textSub: #2b2c2e;
+  --background-start: #f1eee3;
+  --background-end: #ce94c0;
+
+  --font-s: .8rem;
+  --font-m: 1rem;
+  --font-l: 1.2rem;
+  --font-xl: 1.6rem;
+  --main-width: 80%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* colors for dark mode */
+    --textMain: #fcf7ff;
+    --textSub: #c4cad0;
+    --background-start: #1d0e18;
+    --background-end: #3c2f2f;
+  }
+}
+
+/* mobile sizing */
+@media (max-width: 768px) {
+  :root {
+    --font-s: .6rem;
+    --font-m: .8rem;
+    --font-l: 1rem;
+    --font-xl: 1.4rem;
+    --main-width: 99%;
+  }
 }
 
 * {

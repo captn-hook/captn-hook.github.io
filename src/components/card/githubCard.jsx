@@ -37,7 +37,6 @@ export default function GithubCard({ repo }) {
     } else if (!data) {
         return <div className={styles.card}>Loading...</div>;
     } else {
-        console.log(data);
         try {
             return (
                 <a href={data.html_url} className={styles.card}>
