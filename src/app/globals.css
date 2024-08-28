@@ -31,10 +31,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     /* colors for dark mode */
-    --textMain: #fcf7ff;
-    --textSub: #c4cad0;
-    --background-start: #1d0e18;
-    --background-end: #3c2f2f;
+    --textMain: #fbf3ff;
+    --textSub: #e3f1ff;
+    --background-start: #10010b;
+    --background-end: #1e0b0b;
   }
 }
 
