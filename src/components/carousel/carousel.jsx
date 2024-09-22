@@ -196,7 +196,7 @@ export default function Carousel({ images }) {
                                 transform: `translate(-50%, -50%)
                                 ${getTransformValue(index, currentIndex, images.length)}` + ' ' +
                                     (index == currentIndex ? 'scale(.8)' : 'scale(0.5)') + ' ' +
-                                    'perspective(1000px) rotateX(' + current.y + 'deg) rotateY(' + current.x + 'deg)',
+                                    'perspective(1000px) rotateX(' + -current.x + 'deg) rotateY(' + -current.y + 'deg)',
                                 boxShadow: current.x !== 0 && current.y !== 0 ? `${current.x * 2}px ${current.y * 2}px 10px rgba(0, 0, 0, 0.5)` : 'none'
                             }}
                             onMouseMove={tilt}

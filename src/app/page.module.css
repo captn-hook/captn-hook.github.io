@@ -92,3 +92,16 @@
     list-style-type: none;
     margin: 1rem;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-end);
+    color: var(--textMain);
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: Georgia, serif;
+    padding: 1rem;
+    border-top: 1px solid var(--textMain);
+}
