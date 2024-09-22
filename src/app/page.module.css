@@ -16,7 +16,7 @@
 .title {
     padding: 1rem;
     text-align: center;
-    font-size: 3rem;
+    font-size: var(--font-xl);
     font-weight: 700;
     font-family: 'Trebuchet MS', sans-serif;
     color: var(--textMain);
@@ -25,7 +25,7 @@
 
 .subtitle {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--font-l);
     font-weight: 500;
     font-family: Trebuchet MS, sans-serif;
     color: var(--textSub);
@@ -35,12 +35,12 @@
 .description {
     padding: 1rem;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: var(--font-m);
     font-weight: 400;
     font-family: Georgia, serif;
     color: var(--textSub);
     white-space: pre-line;
-    max-width: 80vw;
+    max-width: var(--main-width);
     width: max-content;
     margin-left: auto;
     margin-right: auto;
@@ -53,7 +53,7 @@
 }
 
 .thin {
-    width: 50% !important;
+    width: var(--secondary-width) !important;
 }
 
 .viewer {
@@ -68,7 +68,7 @@
 }
 
 .resume {
-    width: 80%;
+    width: var(--secondary-width);
     max-width: 1000px;
     aspect-ratio: 1/1.2;
     display: block;
@@ -113,7 +113,7 @@
     align-items: center;
     background-color: var(--background-end);
     color: var(--textMain);
-    font-size: 1rem;
+    font-size: var(--font-s);
     font-weight: 400;
     font-family: Georgia, serif;
     padding: 1rem;

@@ -1,5 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
+
+import Markdown from 'react-markdown';
+
 import Image from 'next/image';
 import styles from './cards.module.css'; 
 
@@ -58,7 +61,8 @@ export default function GithubCard({ repo }) {
                     <h2>{data.full_name}</h2>
                     <p>{data.description}</p>
 
-                    <p markdown="1">{data.readme}</p>
+                    <Markdown className={styles.readme}>{data.readme}</Markdown>
+        
                 </a>
             );
         } catch (err) {
