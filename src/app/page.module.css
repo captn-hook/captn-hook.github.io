@@ -2,7 +2,16 @@
     justify-content: center;
     align-items: center;
     background-color: var(--background-start);
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+    height: 100vh;
+    width: 100vw;
 }
+
+.snapper {
+    scroll-snap-align: center;
+}
+
 
 .title {
     padding: 1rem;
@@ -43,20 +52,25 @@
     border: 1px solid var(--textMain);
 }
 
+.thin {
+    width: 50% !important;
+}
+
 .viewer {
+    scroll-snap-align: center;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 50vh;
-    width: var(--main-width);
-    border-radius: 4px;
+    width: 95%;
+    height: 90vh;
+    border-radius: 0px;
+    border: none;
 }
 
 .resume {
-    height: 110vh;
-    width: 100vw;
-    max-height: 110vh;
-    max-width: var(--main-width);
+    width: 80%;
+    max-width: 1000px;
+    aspect-ratio: 1/1.2;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -72,7 +86,7 @@
 }
 
 .topSpacer {
-    height: 8vh;
+    height: 3vh;
 }
 
 .cardList {

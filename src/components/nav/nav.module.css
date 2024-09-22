@@ -9,6 +9,7 @@
     background-color: var(--background-end);
     color: var(--textSub);
     border-bottom: 1px solid var(--textSub);
+    transition: transform 0.3s ease;
 }
 
 .nav ul {
@@ -18,4 +19,8 @@
 
 .nav ul li {
     margin-right: 1rem;
+}
+
+.hidden {
+    transform: translateY(-100%);
 }
