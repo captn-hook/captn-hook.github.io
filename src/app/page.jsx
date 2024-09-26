@@ -25,7 +25,7 @@ export default function Home() {
           <br />
           Like any decent coder, am proficient in many programming languages and software suites, and have no fear of learning any new ones.
           <br />
-          By teaching mself, I have become a Blender expert, although I have touched other 3D modeling software. I also know my
+          By teaching myself, I have become a Blender expert, although I have touched other 3D modeling software. I also know my
           way around Adobe Creative Suite, though I prefer GIMP to Photoshop. Additionally, I have used
           both Unity and Unreal.
           <br />
@@ -82,7 +82,7 @@ export default function Home() {
           <br /><br />
           Away from my desk, I am a huge fan of the outdoors. Specifically, my absolute favorite
           feeling in the world is snowboarding. I have been snowboarding for a very long time,
-          and it was the decider in moving to Bend, Oregon. I also enjoy mountain biking, durring the off season.
+          and it was the decider in moving to Bend, Oregon. I also enjoy mountain biking, during the off season.
         </p>
         <Carousel
           images={[
