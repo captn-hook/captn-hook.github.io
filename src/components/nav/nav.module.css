@@ -1,26 +1,115 @@
 .nav {
-    position: fixed;
+    position: sticky;
     top: 0;
     z-index: 100;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: var(--background-end);
-    color: var(--textSub);
-    border-bottom: 1px solid var(--textSub);
-    transition: transform 0.3s ease;
-}
-
-.nav ul {
     display: flex;
+    align-items: center;
+    gap: 1rem;
+    height: var(--nav-height);
+    padding: 0 1rem;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--font-s);
+}
+
+.brand {
+    flex-shrink: 0;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+}
+
+.linksWrap {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    margin-left: auto;
+}
+
+.links {
+    display: flex;
+    min-width: 0;
+    gap: 0.25rem;
     list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
 }
 
-.nav ul li {
-    margin-right: 1rem;
+.links::-webkit-scrollbar {
+    display: none;
 }
 
-.hidden {
-    transform: translateY(-100%);
+.faded {
+    mask-image: linear-gradient(to right, #000 calc(100% - 3rem), transparent);
+}
+
+.links a {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: var(--text);
+    background: var(--surface-2);
+}
+
+/* room so the last link can scroll fully clear of the arrow */
+.links li:last-child {
+    padding-right: 2rem;
+}
+
+.more,
+.toggle {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    cursor: pointer;
+}
+
+.more {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.toggle {
+    border-color: transparent;
+    background: transparent;
+    color: var(--text-muted);
+}
+
+.more:hover,
+.toggle:hover {
+    background: var(--surface-2);
+    color: var(--text);
+}
+
+@media (max-width: 600px) {
+    .brand {
+        display: none;
+    }
+
+    .linksWrap {
+        margin-left: 0;
+    }
+
+    .nav {
+        gap: 0.5rem;
+    }
 }

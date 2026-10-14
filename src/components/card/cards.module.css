@@ -1,62 +1,166 @@
+/* Matches GitHub's pinned-repo card (Primer tokens), light and dark. */
 .card {
+    --gh-bg: #ffffff;
+    --gh-border: #d1d9e0;
+    --gh-text: #1f2328;
+    --gh-muted: #59636e;
+    --gh-link: #0969da;
+    --gh-hover: #f6f8fa;
+
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 100%;
     height: 100%;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    background: var(--gh-bg);
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    color: var(--gh-text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: border-color 0.15s, background-color 0.15s;
 }
 
-.card h2 {
-    display: inline-block;
-    font-size: 1.5rem;
-    margin-bottom: 0.2rem;
+/* dark follows the system unless the theme toggle overrides it */
+@media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme="light"])) .card {
+        --gh-bg: #0d1117;
+        --gh-border: #3d444d;
+        --gh-text: #f0f6fc;
+        --gh-muted: #9198a1;
+        --gh-link: #4493f8;
+        --gh-hover: #151b23;
+    }
 }
 
-.card h3 {
-    font-size: 1rem;
+:global(:root[data-theme="dark"]) .card {
+    --gh-bg: #0d1117;
+    --gh-border: #3d444d;
+    --gh-text: #f0f6fc;
+    --gh-muted: #9198a1;
+    --gh-link: #4493f8;
+    --gh-hover: #151b23;
 }
 
-.card p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: .1rem;
+.card:hover {
+    background: var(--gh-hover);
+    border-color: var(--gh-muted);
 }
 
-.card img {
-    display: inline-block;
-    border-radius: 20px;
-    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-}
-
-.cardHeader {
+.header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 1rem;
+    gap: 8px;
+    min-width: 0;
 }
 
-.dateContainer {
-    justify-content: space-between;
+.muted {
+    flex-shrink: 0;
+    color: var(--gh-muted);
+}
+
+.name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--gh-link);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* stretch the link over the whole card so anywhere is clickable */
+.name::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 6px;
+}
+
+.card:hover .name {
+    text-decoration: underline;
+}
+
+.owner {
+    font-weight: 400;
+}
+
+.label {
+    flex-shrink: 0;
+    padding: 0 7px;
+    border: 1px solid var(--gh-border);
+    border-radius: 2em;
+    color: var(--gh-muted);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+.mark {
+    flex-shrink: 0;
+    margin-left: auto;
+    color: var(--gh-text);
+    width: 20px;
+    height: 20px;
+}
+
+.description {
+    flex: 1;
+    margin: 8px 0 16px;
+    color: var(--gh-muted);
+    font-size: 12px;
+}
+
+.langBar {
+    display: flex;
+    gap: 2px;
+    height: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.langBar span {
+    min-width: 2px;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    color: var(--gh-muted);
+    font-size: 12px;
+}
+
+.meta span {
+    display: inline-flex;
     align-items: center;
+    gap: 4px;
 }
 
-.divider {
-    /* span between two dates */
-    border-top: 1px solid black;
-    width: 100%;
+.meta svg {
+    width: 14px;
+    height: 14px;
 }
 
-.date {
-    padding: .2rem;
-    margin-bottom: 0;
+.dot {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 1px solid rgba(31, 35, 40, 0.15);
+    border-radius: 50%;
 }
 
-.readme {
-    transform: scale(0.8) !important;
-    border-top: 1px solid black;
-    padding-top: 2rem;
+/* sits above the card-wide repo link so it stays separately clickable */
+.live {
+    position: relative;
+    z-index: 1;
+    margin-left: auto;
+    color: var(--gh-link);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.live:hover {
+    text-decoration: underline;
 }

@@ -1,121 +1,165 @@
 .main {
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-start);
-    scroll-snap-type: y proximity;
-    overflow-y: scroll;
-    height: 100vh;
-    width: 100vw;
+    width: min(var(--content-width), 100% - 2rem);
+    margin: 0 auto;
+    padding-bottom: 3rem;
 }
 
-.snapper {
-    scroll-snap-align: center;
+.hero {
+    padding: 4rem 0 1.5rem;
 }
-
 
 .title {
-    padding: 1rem;
-    text-align: center;
     font-size: var(--font-xl);
-    font-weight: 700;
-    font-family: 'Trebuchet MS', sans-serif;
-    color: var(--textMain);
-    white-space: pre-line;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
 }
 
 .subtitle {
-    text-align: center;
+    margin-top: 0.35rem;
+    color: var(--text-muted);
     font-size: var(--font-l);
-    font-weight: 500;
-    font-family: Trebuchet MS, sans-serif;
-    color: var(--textSub);
-    white-space: pre-line;
 }
 
-.description {
-    padding: 1rem;
-    text-align: center;
-    font-size: var(--font-m);
-    font-weight: 400;
-    font-family: Georgia, serif;
-    color: var(--textSub);
-    white-space: pre-line;
-    max-width: var(--main-width);
-    width: max-content;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 1rem;
+.section {
+    padding-top: 3.5rem;
+}
+
+.heading {
     margin-bottom: 1rem;
-    border-radius: 4px;
-    /* linear gradient from transperant to background-end */
-    background: var(--background-end);
-    border: 1px solid var(--textMain);
+    font-size: var(--font-l);
+    font-weight: 600;
 }
 
-.thin {
-    width: var(--secondary-width) !important;
+.prose {
+    max-width: var(--prose-width);
+}
+
+.prose p + p {
+    margin-top: 1em;
+}
+
+.figure {
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+/* Wide media: column width on smaller screens, 80% of the window once that's wider
+   (crossover at 1200px, where 80% = the 960px column). cqw excludes the scrollbar. */
+@media (min-width: 1200px) {
+    .wide {
+        width: 80cqw;
+        margin-left: calc(50% - 40cqw);
+    }
+
+    .wide .viewer {
+        height: min(85vh, 45cqw);
+    }
+}
+
+.caption {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: var(--font-s);
+}
+
+.actions {
+    display: flex;
+    flex-shrink: 0;
+    gap: 1rem;
+}
+
+.action {
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.action:hover {
+    text-decoration: underline;
 }
 
 .viewer {
-    scroll-snap-align: center;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
-    height: 90vh;
-    border-radius: 0px;
-    border: none;
+    width: 100%;
+    height: min(75vh, 640px);
+    border: 0;
+    background: var(--surface-2);
 }
 
 .resume {
-    width: var(--secondary-width);
-    max-width: 1000px;
-    aspect-ratio: 1/1.2;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 4px;
+    width: 100%;
+    height: min(90vh, 1100px);
+    border: 0;
+    background: var(--surface-2);
 }
 
-.description a {
-    color: #007bff;
+.resumeFallback {
+    display: none;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
-.bottomSpacer {
-    height: 10vh;
-}
-
-.topSpacer {
-    height: 3vh;
+.button {
+    display: inline-block;
+    padding: 0.6rem 1.1rem;
+    background: var(--accent);
+    color: var(--accent-ink);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-weight: 600;
+    text-decoration: none;
 }
 
 .cardList {
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    max-width: var(--main-width);
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    gap: 1rem;
+    list-style: none;
 }
 
-.cardList li {
-    flex: 1 1 0;
-    list-style-type: none;
-    margin: 1rem;
+.more {
+    margin-top: 1rem;
+    color: var(--text-muted);
+    font-size: var(--font-s);
 }
 
 .footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--background-end);
-    color: var(--textMain);
+    padding: 1.25rem 1rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    text-align: center;
     font-size: var(--font-s);
-    font-weight: 400;
-    font-family: Georgia, serif;
-    padding: 1rem;
-    border-top: 1px solid var(--textMain);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-top: 2.5rem;
+    }
+
+    .caption {
+        flex-direction: column;
+    }
+
+    .viewer,
+    .wide .viewer {
+        height: 70vh;
+    }
+
+    .resume {
+        display: none;
+    }
+
+    .resumeFallback {
+        display: block;
+    }
 }
